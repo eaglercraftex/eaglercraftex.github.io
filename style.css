@@ -1,0 +1,286 @@
+/* Breadcrumb navigation */
+.breadcrumb {
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  color: #39ff14;
+}
+.breadcrumb a {
+  color: #39ff14;
+  text-decoration: underline;
+}
+.breadcrumb span {
+  color: #e0e0e0;
+}
+.breadcrumb{font-size:.95rem;margin-bottom:1.2rem;color:#39ff14}.breadcrumb a{color:#39ff14;text-decoration:underline}.breadcrumb span{color:#e0e0e0}#about,.container #about{background:rgba(24,24,24,.92);border-radius:12px;box-shadow:0 2px 12px rgba(30,144,255,.16);border:1.5px solid #39ff14;padding:2rem 1.5rem;margin-bottom:2.5rem;color:#e0e0e0}
+body {
+  position: relative;
+  min-height: 100vh;
+  color: #e0e0e0;
+  font-family: 'Minecraftia', 'Segoe UI', 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -2;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/9/9c/IronException_2b2t_Spawn_Render_June_2019.png') center center/cover no-repeat fixed;
+  opacity: 0.35;
+}
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  background: #181818;
+  opacity: 0.85;
+}
+header {
+  background: rgba(30, 30, 30, 0.92);
+  color: #39ff14;
+  padding: 2rem 0 1.5rem 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(30,144,255,0.1);
+  border-bottom: 4px solid #39ff14;
+}
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  font-family: 'Minecraftia', 'Segoe UI', 'Roboto', Arial, sans-serif;
+  text-shadow: 2px 2px 0 #000, 4px 4px 8px #39ff14;
+}
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+nav {
+  margin-top: 1rem;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: #ffd700;
+}
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+.hero {
+  background: rgba(24, 24, 24, 0.92);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(30,144,255,0.18);
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 8rem;
+  border: 2px solid #39ff14;
+}
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+.hero .cta {
+  background: #39ff14;
+  color: #181818;
+  border: none;
+  padding: 0.9rem 2.2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: 'Minecraftia', 'Segoe UI', 'Roboto', Arial, sans-serif;
+  box-shadow: 0 2px 8px #000a;
+}
+.hero .cta:hover {
+  background: #222;
+  color: #39ff14;
+}
+section {
+  margin-bottom: 2.5rem;
+}
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #1e90ff;
+}
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.feature {
+  background: #fff;
+  color: #181818;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30,144,255,0.16);
+  padding: 2rem 1.5rem;
+  flex: 1 1 250px;
+  min-width: 220px;
+  max-width: 320px;
+  text-align: center;
+  border: 1.5px solid #39ff14;
+}
+.feature h4 {
+  margin-bottom: 0.7rem;
+  color: #222;
+}
+.feature p {
+  font-size: 1rem;
+  color: #444;
+}
+.contact-form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30,144,255,0.06);
+  padding: 2rem 1.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+.contact-form button {
+  background: #1e90ff;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contact-form button:hover {
+  background: #005bb5;
+}
+footer {
+  background: rgba(24, 24, 24, 0.96);
+  color: #39ff14;
+  text-align: center;
+  padding: 1.2rem 0;
+  font-size: 1rem;
+  margin-top: 2rem;
+  border-top: 2px solid #39ff14;
+}
+@font-face {
+  font-family: 'Minecraftia';
+  src: url('https://fonts.cdnfonts.com/s/17373/Minecraftia-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@media (max-width: 700px) {
+  header {
+    padding: 1.2rem 0 1rem 0;
+  }
+  header h1 {
+    font-size: 1.6rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
+  nav {
+    margin-top: 0.5rem;
+  }
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    padding: 0.7rem 0;
+    border-radius: 8px;
+    background: rgba(30,30,30,0.7);
+    color: #39ff14;
+    text-align: center;
+  }
+  nav a:hover {
+    color: #fff;
+    background: #39ff14;
+  }
+  .container {
+    padding: 0 0.2rem;
+  }
+  .hero {
+    padding: 1.2rem 0.3rem;
+  }
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+  .hero .cta {
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem 0;
+    margin-top: 1rem;
+  }
+  .features {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .feature {
+    min-width: unset;
+    max-width: unset;
+    padding: 1.2rem 0.7rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  footer {
+    font-size: 0.9rem;
+    padding: 0.7rem 0;
+  }
+}
+/* Mobile nav hamburger styles */
+.mobile-nav-toggle {
+  display: none;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #39ff14;
+  z-index: 2000;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100vw;
+    background: rgba(24,24,24,0.98);
+    z-index: 1500;
+    box-shadow: 0 2px 12px #000a;
+  }
+  nav.open {
+    display: flex;
+  }
+}
