@@ -33,6 +33,7 @@
   }
   </script>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.cdnfonts.com">
 </head>
 <body>
   <header>
@@ -42,7 +43,7 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="features.html">Features</a>
-      <a href="https://github.com/eaglercraftex/eaglercraftex" target="_blank">GitHub</a>
+      <a href="#" onclick="event.preventDefault(); alert('Repository coming soon! Stay tuned for updates.');">GitHub</a>
     </nav>
   </header>
   <main class="container">
@@ -51,6 +52,9 @@
     </nav>
     <section id="features">
       <h2>Features</h2>
+      <div class="notice">
+        <p><strong>⚠️ Note:</strong> The eaglercraftex repository is not yet public. Stay tuned for updates!</p>
+      </div>
       <div class="features">
         <div class="feature">
           <h4>Multiplayer</h4>
@@ -70,6 +74,6 @@
   <footer>
     &copy; <span id="copyright-year"></span> eaglercraftex. All rights reserved.
   </footer>
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>

@@ -1,27 +1,107 @@
-
-
-document.addEventListener('DOMContentLoaded',function(){
-  // Hamburger menu
-  const t=document.querySelector('.mobile-nav-toggle'),n=document.querySelector('header nav');
-  if(t&&n){
-    t.addEventListener('click',()=>{
-      n.classList.toggle('open');
-      t.setAttribute('aria-label',n.classList.contains('open')?'Close navigation':'Open navigation');
+// Modern, optimized JavaScript for eaglercraftex
+document.addEventListener('DOMContentLoaded', () => {
+  // Mobile navigation toggle
+  const navToggle = document.querySelector('.mobile-nav-toggle');
+  const nav = document.querySelector('header nav');
+  
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      const isOpen = nav.classList.contains('open');
+      navToggle.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
     });
-    n.querySelectorAll('a').forEach(e=>e.addEventListener('click',()=>n.classList.remove('open')));
+    
+    // Close nav when clicking on a link
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('open'));
+    });
   }
-  // Copyright year
-  const y=document.getElementById('copyright-year');
-  if(y)y.textContent=(new Date).getFullYear();
-  // Particle burst
-  const h=document.querySelector('header h1');
-  if(!h)return;
-  const c=document.createElement('canvas');
-  Object.assign(c.style,{position:'fixed',left:0,top:0,pointerEvents:'none',zIndex:1000});
-  document.body.appendChild(c);
-  function r(){c.width=window.innerWidth,c.height=window.innerHeight}
-  r();window.addEventListener('resize',r);
-  function a(){const p=['#39ff14','#FFD700','#00BFFF','#FF5555','#FFAA00','#55FF55','#AAAAAA','#5555FF'];return p[Math.floor(Math.random()*p.length)]}
-  function b(x,y){const g=c.getContext('2d'),s=[];for(let i=0;i<40;i++){const d=Math.random()*2*Math.PI,m=2+3*Math.random();s.push({x,y,vx:Math.cos(d)*m,vy:Math.sin(d)*m,color:a(),life:40+20*Math.random()})}let f=0;!function e(){g.clearRect(0,0,c.width,c.height),s.forEach(p=>{g.beginPath(),g.arc(p.x,p.y,6,0,2*Math.PI),g.fillStyle=p.color,g.globalAlpha=Math.max(0,(p.life-f)/p.life),g.fill(),p.x+=p.vx,p.y+=p.vy,p.vy+=.15}),g.globalAlpha=1,++f<60?requestAnimationFrame(e):g.clearRect(0,0,c.width,c.height)}()}
-  h.style.cursor='pointer',h.title='Click me!',h.addEventListener('click',e=>{const r=h.getBoundingClientRect(),x=r.left+r.width/2,y=r.top+r.height/2;b(x,y)})
+  
+  // Update copyright year
+  const copyrightYear = document.getElementById('copyright-year');
+  if (copyrightYear) {
+    copyrightYear.textContent = new Date().getFullYear();
+  }
+  
+  // Particle burst effect (optimized)
+  const h1 = document.querySelector('header h1');
+  if (!h1) return;
+  
+  // Create canvas for particle effect
+  const canvas = document.createElement('canvas');
+  Object.assign(canvas.style, {
+    position: 'fixed',
+    left: '0',
+    top: '0',
+    pointerEvents: 'none',
+    zIndex: '1000'
+  });
+  document.body.appendChild(canvas);
+  
+  const ctx = canvas.getContext('2d', { alpha: true });
+  
+  const resizeCanvas = () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  };
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+  
+  // Particle colors
+  const colors = ['#39ff14', '#FFD700', '#00BFFF', '#FF5555', '#FFAA00', '#55FF55', '#AAAAAA', '#5555FF'];
+  const getRandomColor = () => colors[Math.floor(Math.random() * colors.length)];
+  
+  const createBurst = (x, y) => {
+    const particles = [];
+    const particleCount = 40;
+    
+    for (let i = 0; i < particleCount; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 2 + Math.random() * 3;
+      particles.push({
+        x,
+        y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        color: getRandomColor(),
+        life: 40 + Math.random() * 20
+      });
+    }
+    
+    let frame = 0;
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 6, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = Math.max(0, (p.life - frame) / p.life);
+        ctx.fill();
+        
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.15; // gravity
+      });
+      
+      ctx.globalAlpha = 1;
+      
+      if (++frame < 60) {
+        requestAnimationFrame(animate);
+      } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+    };
+    
+    animate();
+  };
+  
+  h1.style.cursor = 'pointer';
+  h1.title = 'Click me!';
+  h1.addEventListener('click', (e) => {
+    const rect = h1.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    createBurst(x, y);
+  });
 });

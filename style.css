@@ -1,3 +1,40 @@
+/* Notice banner */
+.notice {
+  background: linear-gradient(135deg, rgba(57, 255, 20, 0.15), rgba(30, 144, 255, 0.15));
+  border: 2px solid #39ff14;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(57, 255, 20, 0.2);
+  animation: pulse-border 2s ease-in-out infinite;
+}
+.notice h2 {
+  color: #39ff14;
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+}
+.notice p {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  margin: 0;
+}
+.notice strong {
+  color: #ffd700;
+  font-weight: 700;
+}
+@keyframes pulse-border {
+  0%, 100% {
+    border-color: #39ff14;
+    box-shadow: 0 4px 20px rgba(57, 255, 20, 0.2);
+  }
+  50% {
+    border-color: #ffd700;
+    box-shadow: 0 4px 30px rgba(255, 215, 0, 0.4);
+  }
+}
+
 /* Breadcrumb navigation */
 .breadcrumb {
   font-size: 0.95rem;
@@ -11,7 +48,7 @@
 .breadcrumb span {
   color: #e0e0e0;
 }
-.breadcrumb{font-size:.95rem;margin-bottom:1.2rem;color:#39ff14}.breadcrumb a{color:#39ff14;text-decoration:underline}.breadcrumb span{color:#e0e0e0}#about,.container #about{background:rgba(24,24,24,.92);border-radius:12px;box-shadow:0 2px 12px rgba(30,144,255,.16);border:1.5px solid #39ff14;padding:2rem 1.5rem;margin-bottom:2.5rem;color:#e0e0e0}
+
 body {
   position: relative;
   min-height: 100vh;
@@ -107,6 +144,15 @@ nav a:hover {
 .hero .cta:hover {
   background: #222;
   color: #39ff14;
+}
+#about {
+  background: rgba(24, 24, 24, 0.92);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30, 144, 255, 0.16);
+  border: 1.5px solid #39ff14;
+  padding: 2rem 1.5rem;
+  margin-bottom: 2.5rem;
+  color: #e0e0e0;
 }
 section {
   margin-bottom: 2.5rem;
