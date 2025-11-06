@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.body.appendChild(canvas);
   
-  const ctx = canvas.getContext('2d', { alpha: true });
+  const ctx = canvas.getContext('2d');
   
   const resizeCanvas = () => {
     canvas.width = window.innerWidth;
