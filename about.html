@@ -33,6 +33,7 @@
   }
   </script>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.cdnfonts.com">
 </head>
 <body>
   <header>
@@ -42,7 +43,7 @@
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="features.html">Features</a>
-      <a href="https://github.com/eaglercraftex/eaglercraftex" target="_blank">GitHub</a>
+      <a href="#" onclick="event.preventDefault(); alert('Repository coming soon! Stay tuned for updates.');">GitHub</a>
     </nav>
   </header>
   <main class="container">
@@ -52,11 +53,14 @@
     <section id="about">
       <h2>About eaglercraftex</h2>
       <p>eaglercraftex is a modern, open source EaglercraftX client. It is designed for speed, accessibility, and fun, letting you play anywhere, anytime, on any device. The project is community-driven and aims to improve the classic EaglercraftX experience on the web.</p>
+      <div class="notice">
+        <p><strong>⚠️ Note:</strong> The eaglercraftex repository is not yet public. Stay tuned for updates!</p>
+      </div>
     </section>
   </main>
   <footer>
     &copy; <span id="copyright-year"></span> eaglercraftex. All rights reserved.
   </footer>
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
